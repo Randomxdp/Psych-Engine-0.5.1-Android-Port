@@ -36,7 +36,7 @@ class FlxVideo extends FlxBasic
 		WebView.onClose=onClose;
 		WebView.onURLChanging=onURLChanging;
 
-		WebView.open(androidPath + source + '.html', false, Void, ['http://exitme(.*)']);
+		WebView.open(androidPath + source + '.html', false, null, ['http://exitme(.*)']);
 	}
 
 	public override function update(dt:Float) {
