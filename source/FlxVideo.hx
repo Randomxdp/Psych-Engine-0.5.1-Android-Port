@@ -12,7 +12,7 @@ class FlxVideo extends FlxBasic
 {
 	public static var androidPath:String = 'file:///android_asset/';
 
-	public static var source:String = 'assets/videos/';
+	public static var source1:String = 'assets/videos/';
 
 	// public var nextState:FlxState;
 
