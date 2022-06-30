@@ -8,8 +8,8 @@ on: [push,pull_request,workflow_dispatch]
 # A workflow run is made up of one or 69 jobs that can run sequentially or in parallel
 jobs:
   # This workflow dsoent contain a single job called "build"
-  buildAndroid:
-    name: buildAndroid
+  Android:
+    name: Android
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -39,7 +39,7 @@ jobs:
           haxelib setup ~/haxelib
           haxelib install hxcpp > /dev/null
           haxelib install lime
-          haxelib install openfl
+          haxelib git openfl https://github.com/mcagabe19/fastfl-9.0.2.git
           haxelib --never install flixel
           haxelib run lime setup flixel
           haxelib install flixel-tools
@@ -48,7 +48,7 @@ jobs:
           haxelib install flixel-addons
           haxelib install hxCodec
           haxelib git linc_luajit https://github.com/jigsaw-4277821/linc_luajit.git
-          haxelib git extension-androidtools https://github.com/randomxdp/extension-androidtools.git
+          haxelib git extension-androidtools https://github.com/mcagabe19/extension-androidtools.git
           haxelib git extension-videoview https://github.com/jigsaw-4277821/extension-videoview.git
           haxelib list
       - name: Create Version Tag
@@ -65,7 +65,7 @@ jobs:
           ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
 
       - name: Compile
-        run: haxelib run lime build android --app-version="4.0.0-${{ github.run_id}}"
+        run: haxelib run lime build android -final
 
       - name: Publish Artifact
         uses: actions/upload-artifact@v2.2.4
