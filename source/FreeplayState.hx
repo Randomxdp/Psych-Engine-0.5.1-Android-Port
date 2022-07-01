@@ -52,9 +52,7 @@ class FreeplayState extends MusicBeatState
 
 	override function create()
 	{
-		#if MODS_ALLOWED
 		Paths.destroyLoadedImages();
-		#end
 		
 		PlayState.isStoryMode = false;
 		WeekData.reloadWeekFiles(false);
