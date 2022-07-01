@@ -57,6 +57,15 @@ jobs:
           haxelib git linc_luajit https://github.com/jigsaw-4277821/linc_luajit.git
           haxelib git extension-androidtools https://github.com/mcagabe19/extension-androidtools.git
           haxelib git extension-videoview https://github.com/jigsaw-4277821/extension-videoview.git
+          haxelib set lime-samples 6.2.0
+          haxelib set openfl-samples 8.4.0
+          haxelib set box2d 1.2.2
+          haxelib set layout 1.1.0
+          haxelib set flixel-addons 2.8.0
+          haxelib set flixel-ui 2.3.3
+          haxelib set flixel-demos 2.7.3
+          haxelib set flixel-tools 1.5.0
+          haxelib set flixel-templates 2.6.4
       - name: Create Version Tag
         run: echo "${{github.run_id}}" > VERSION
 
@@ -130,7 +139,15 @@ jobs:
           haxelib git linc_luajit https://github.com/jigsaw-4277821/linc_luajit.git
           haxelib git extension-androidtools https://github.com/mcagabe19/extension-androidtools.git
           haxelib git extension-videoview https://github.com/jigsaw-4277821/extension-videoview.git
-          
+          haxelib set lime-samples 6.2.0
+          haxelib set openfl-samples 8.4.0
+          haxelib set box2d 1.2.2
+          haxelib set layout 1.1.0
+          haxelib set flixel-addons 2.8.0
+          haxelib set flixel-ui 2.3.3
+          haxelib set flixel-demos 2.7.3
+          haxelib set flixel-tools 1.5.0
+          haxelib set flixel-templates 2.6.4
       - name: Create Version Tag
         run: echo "${{github.run_id}}" > VERSION
 
