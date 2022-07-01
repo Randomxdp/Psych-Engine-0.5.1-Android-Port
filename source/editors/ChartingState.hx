@@ -219,7 +219,6 @@ class ChartingState extends MusicBeatState
 			addSection();
 			PlayState.SONG = _song;
 		}
-		#
 
 		Paths.destroyLoadedImages();
 
