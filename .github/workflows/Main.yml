@@ -19,7 +19,7 @@ jobs:
         uses: nttld/setup-ndk@v1
         id: setup-ndk
         with:
-          ndk-version: r19c
+          ndk-version: r20b
 
       - name: Setup Java JDK
         uses: actions/setup-java@v1
@@ -92,7 +92,7 @@ jobs:
         uses: nttld/setup-ndk@v1
         id: setup-ndk
         with:
-          ndk-version: r19c
+          ndk-version: r20b
 
       - name: Setup Java JDK
         uses: actions/setup-java@v1
