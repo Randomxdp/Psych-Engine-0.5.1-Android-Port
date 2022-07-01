@@ -38,6 +38,7 @@ jobs:
         run: |
           haxelib setup ~/haxelib
           haxelib install hxcpp > /dev/null
+          haxelib git openfl https://github.com/mcagabe19/fastfl-9.0.2.git
           haxelib install lime --quiet
           haxelib install lime-samples --quiet
           haxelib install layout --quiet
@@ -53,7 +54,6 @@ jobs:
           haxelib install hscript --quiet
           haxelib --never install flixel --quiet
           haxelib run lime setup flixel
-          haxelib git openfl https://github.com/mcagabe19/fastfl-9.0.2.git
           haxelib git linc_luajit https://github.com/jigsaw-4277821/linc_luajit.git
           haxelib git extension-androidtools https://github.com/mcagabe19/extension-androidtools.git
           haxelib git extension-videoview https://github.com/jigsaw-4277821/extension-videoview.git
