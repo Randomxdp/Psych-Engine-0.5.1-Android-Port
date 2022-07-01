@@ -145,6 +145,9 @@ jobs:
       - name: Compile
         run: haxelib run lime build android -debug
 
+      - name: Find The Shit
+        run: find / -name output.json
+
       - name: Publish Artifact
         uses: actions/upload-artifact@v2.2.4
         with:
