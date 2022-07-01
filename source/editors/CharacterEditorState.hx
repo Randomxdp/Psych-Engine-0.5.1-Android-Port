@@ -1298,7 +1298,7 @@ class CharacterEditorState extends MusicBeatState
 
 		if (data.length > 0)
 		{
-			#if MODS_ALLOWED
+			#if android
                         SUtil.saveContent(daAnim, ".json", data);
                         #else
 			_file = new FileReference();
