@@ -80,7 +80,7 @@ jobs:
           name: androidBuild
           path: export/release/android/bin/app/build/outputs/apk/debug
 
-  Android Debug:
+  Android-Debug:
     name: Android Debug
     runs-on: ubuntu-latest
     steps:
