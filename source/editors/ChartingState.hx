@@ -923,6 +923,7 @@ class ChartingState extends MusicBeatState
 		tab_group_event.name = 'Events';
 
 		#if LUA_ALLOWED
+		#if MODS_ALLOWED
 		var eventPushedMap:Map<String, Bool> = new Map<String, Bool>();
 		var directories:Array<String> = [Paths.mods('custom_events/'), Paths.mods(Paths.currentModDirectory + '/custom_events/')];
 		for (i in 0...directories.length) {
@@ -942,6 +943,7 @@ class ChartingState extends MusicBeatState
 		}
 		eventPushedMap.clear();
 		eventPushedMap = null;
+		#end
 		#end
 
 		descText = new FlxText(20, 200, 0, eventStuff[0][0]);
