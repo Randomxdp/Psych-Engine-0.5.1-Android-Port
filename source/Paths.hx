@@ -232,7 +232,6 @@ class Paths
 	
 	static public function getTextFromFile(key:String, ?ignoreMods:Bool = false):String
 	{
-		#if sys
 		#if MODS_ALLOWED
 		if (!ignoreMods && FileSystem.exists(mods(key)))
 			return File.getContent(mods(key));
@@ -250,16 +249,15 @@ class Paths
 				#if MODS_ALLOWED
 				if (FileSystem.exists(SUtil.getPath() + levelPath))
 					return File.getContent(SUtil.getPath() + levelPath);
+				#end
 			}
-			#end
 
 			levelPath = getLibraryPathForce(key, 'shared');
 			#if MODS_ALLOWED
 			if (FileSystem.exists(SUtil.getPath() + levelPath))
 				return File.getContent(SUtil.getPath() + levelPath);
-				#end
+			#end
 		}
-		#end
 		return Assets.getText(getPath(key, TEXT));
 	}
 
