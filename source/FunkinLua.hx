@@ -1141,7 +1141,6 @@ class FunkinLua {
 		  {
 		  #if MODS_ALLOWED
 			var path:String = Paths.modsJson(Paths.formatToSongPath(PlayState.SONG.song) + '/' + dialogueFile);
-			#end
 			if(!FileSystem.exists(path)) {
 				path = Paths.json(Paths.formatToSongPath(PlayState.SONG.song) + '/' + dialogueFile);
 			}
@@ -1163,7 +1162,9 @@ class FunkinLua {
 					PlayState.instance.startCountdown();
 				}
 			}
-		});
+		#end
+	 }
+	);
 		Lua_helper.add_callback(lua, "startVideo", function(videoFile:String) {
 			#if VIDEOS_ALLOWED
 			if(FileSystem.exists(Paths.video(videoFile))) {
