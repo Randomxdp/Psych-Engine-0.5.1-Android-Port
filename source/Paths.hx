@@ -257,8 +257,8 @@ class Paths
 			#if MODS_ALLOWED
 			if (FileSystem.exists(SUtil.getPath() + levelPath))
 				return File.getContent(SUtil.getPath() + levelPath);
+				#end
 		}
-		#end
 		#end
 		return Assets.getText(getPath(key, TEXT));
 	}
