@@ -1702,9 +1702,8 @@ class PlayState extends MusicBeatState
 		#if MODS_ALLOWED
 		var file:String = SUtil.getPath() + Paths.json(songName + '/events');
 		if (FileSystem.exists(Paths.modsJson(songName + '/events')) || FileSystem.exists(file)) {
-		else
+		#else
 		if (OpenFlAssets.exists(file)) {
-		#end
 			var eventsData:Array<Dynamic> = Song.loadFromJson('events', songName).events;
 			for (event in eventsData) //Event Notes
 			{
@@ -1717,6 +1716,7 @@ class PlayState extends MusicBeatState
 				}
 			}
 		}
+		#end
 
 		for (section in noteData)
 		{
