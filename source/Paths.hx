@@ -237,23 +237,28 @@ class Paths
 		if (!ignoreMods && FileSystem.exists(mods(key)))
 			return File.getContent(mods(key));
 		#end
-
+    #if MODS_ALLOWED
 		if (FileSystem.exists(SUtil.getPath() + getPreloadPath(key)))
 			return File.getContent(SUtil.getPath() + getPreloadPath(key));
+		#end
 
 		if (currentLevel != null)
 		{
 			var levelPath:String = '';
 			if(currentLevel != 'shared') {
 				levelPath = getLibraryPathForce(key, currentLevel);
+				#if MODS_ALLOWED
 				if (FileSystem.exists(SUtil.getPath() + levelPath))
 					return File.getContent(SUtil.getPath() + levelPath);
 			}
+			#end
 
 			levelPath = getLibraryPathForce(key, 'shared');
+			#if MODS_ALLOWED
 			if (FileSystem.exists(SUtil.getPath() + levelPath))
 				return File.getContent(SUtil.getPath() + levelPath);
 		}
+		#end
 		#end
 		return Assets.getText(getPath(key, TEXT));
 	}
